@@ -12,38 +12,9 @@ graph TD
     style F fill:#c8e6c9
 ```
 
---
 ## Entidades e relacionamentos (Tabelas)
-User (1) ──→ (N) Accounts
-- ID (UUID)
-- Nome
-- Email (UNIQUE)
-- Telefone
-- Endereço
-- DataNascimento
-- CPF (UNIQUE)
-- CreatedAt
-- UpdatedAt
 
-Accounts (1) ──→ (N) Transactions
-- ID (UUID)
-- UserID (FK → User)
-- Balance
-- Status (active/inactive)
-- Type (conta corrente)
-- CreatedAt
-- UpdatedAt
-
-Transactions
-- ID (UUID)
-- FromAccountID (FK → Accounts)
-- ToAccountID (FK → Accounts)
-- Amount
-- Type (pix/ted/transfer)
-- Status (pending/completed/failed)
-- Metadata (JSONB)
-- CreatedAt
-- CompletedAt (pode ser NULL)
+<img width="769" height="621" alt="image" src="https://github.com/user-attachments/assets/2a68a3ae-c7ff-4ed5-8413-11ae66ecb15e" />
 
 ## 🧪 Casos de Uso Pra Estudar
 Criar Conta:
