@@ -13,27 +13,35 @@ Handler retorna JSON + status code
 --
 ## Entidades e relacionamentos (Tabelas)
 User (1) ──→ (N) Accounts
+- ID (UUID)
 - Nome
-- email
-- telefone
-- endereco
-- data de nascimento
-- CPF
+- Email (UNIQUE)
+- Telefone
+- Endereço
+- DataNascimento
+- CPF (UNIQUE)
+- CreatedAt
+- UpdatedAt
 
 Accounts (1) ──→ (N) Transactions
-- ID
-- Amount
-- Status
-- userID (FK -> da tabela de users)
+- ID (UUID)
+- UserID (FK → User)
+- Balance
+- Status (active/inactive)
+- Type (conta corrente)
+- CreatedAt
+- UpdatedAt
 
 Transactions
-- ID
+- ID (UUID)
 - FromAccountID (FK → Accounts)
 - ToAccountID (FK → Accounts)
 - Amount
-- Type (pix/ted)
+- Type (pix/ted/transfer)
 - Status (pending/completed/failed)
-- Metadata (JSONB pra dados extras)
+- Metadata (JSONB)
+- CreatedAt
+- CompletedAt (pode ser NULL)
 
 ## 🧪 Casos de Uso Pra Estudar
 Criar Conta:

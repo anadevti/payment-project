@@ -12,3 +12,15 @@
 - numero da conta
 - amount
 - tipo da transacao (pix, ted)
+
+🎯 Ordem de Implementação
+Fase 1:
+
+- Desenhar schema SQL completo
+- Criar Models em Go (User, Account, Transaction structs)
+- Escrever migrations
+
+Fase 2:
+- Criar Repository (queries CRUD)
+- Criar Handlers (endpoints)
+- Testar
