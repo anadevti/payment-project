@@ -2,7 +2,7 @@ create table users
 (
     id         uuid not null
         primary key,
-    name       varchar,
+    Name       varchar,
     email      varchar
         unique,
     cpf        varchar
