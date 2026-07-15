@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/anadevti/payment-project/internal/repository"
 	"github.com/go-chi/chi/v5"
 )
 
@@ -15,13 +16,17 @@ Retorna resposta JSON
 Estuda: validação, status codes, error handling
 */
 
-func GetAccount(w http.ResponseWriter, r *http.Request) {
+type AccountHandler struct {
+	Repo *repository.UserRepository
+}
+
+func (h *AccountHandler) HandleGetAccount(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
 	w.WriteHeader(200)
 	w.Write([]byte(fmt.Sprintf("account id: %s", id)))
 }
 
-func SomeDefaultHandler(w http.ResponseWriter, r *http.Request) {
+func (h *AccountHandler) HandleSomeDefaultHandler(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "id")
 
 	if id == "" {
